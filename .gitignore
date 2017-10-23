@@ -1,13 +1,6 @@
 
 # Created by https://www.gitignore.io/api/macos,swift,xcode,carthage
 
-### Carthage ###
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-Carthage/Checkouts
-!Carthage/Build
-
 ### macOS ###
 *.DS_Store
 .AppleDouble
@@ -106,5 +99,12 @@ fastlane/test_output
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+Carthage/Checkouts
+!Carthage/Build
 
 # End of https://www.gitignore.io/api/macos,swift,xcode,carthage
