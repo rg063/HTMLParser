@@ -29,45 +29,19 @@ class ViewController: UIViewController {
     }
     
     func parseHTML(html: String) -> Void {
-//        var shows: Array<String> = []
         do {
             let doc = try Kanna.HTML(html: html, encoding: String.Encoding.utf8)
-                
-//            // Search for nodes by CSS selector
-//            for show in doc.css("td[id^='Text']") {
-//
-//                // Strip the string of surrounding whitespace.
-//                let showString = show.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-//
-//                // All text involving shows on this page currently start with the weekday.
-//                // Weekday formatting is inconsistent, but the first three letters are always there.
-//                let regex = try! NSRegularExpression(pattern: "^(mon|tue|wed|thu|fri|sat|sun)", options: [.caseInsensitive])
-//
-//                if regex.firstMatch(in: showString, options: [], range: NSMakeRange(0, showString.characters.count)) != nil {
-//                    shows.append(showString)
-//                    print("\(showString)\n")
-//                }
-//            }
-            
-            var num = 0
-            for show in doc.css("a, link") {
-                if num == 3 {
-                    let result = show.text!
-                    print(show.text!)
-                    print(result[result.index(result.startIndex, offsetBy: 2)..<result.endIndex])
-                }
-                num += 1
-            }
+
+            let result:String = doc.xpath("/html/body/div[@id='main']/ol/div[@class='item'][1]/div[2]/a").first!.text!
+            print(result[result.index(result.startIndex, offsetBy: 2)..<result.endIndex])
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
