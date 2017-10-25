@@ -1,2 +1,3 @@
 github "Alamofire/Alamofire" "4.5.1"
+github "Alamofire/AlamofireImage" "3.3.0"
 github "tid-kijyun/Kanna" "9091f84ed0e39b7fa8536da98a1812c3456bc4e3"
