@@ -46,16 +46,17 @@ class ViewController: UIViewController {
     }
 
     func dlImage(imageURL: String) -> Void {
-        Alamofire.request(imageURL).responseImage { response in
-            debugPrint(response)
-            print(response.request)
-            print(response.response)
-            debugPrint(response.result)
-            
-            if let image = response.result.value {
-                print("image downloaded: \(image)")
-                self.imageView.image = image
-            }
+//        Alamofire.request(imageURL).responseImage { response in
+//            debugPrint(response)
+//            print(response.request!)
+//            print(response.response!)
+//            debugPrint(response.result)
+//            
+//            if let image = response.result.value {
+//                print("image downloaded: \(image)")
+//                self.imageView.image = image
+                if let snackImageURL = URL(string: imageURL) {
+                    self.imageView.af_setImage(withURL: snackImageURL)
         }
     }
     override func didReceiveMemoryWarning() {
