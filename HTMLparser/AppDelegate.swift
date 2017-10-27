@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HTMLparser
 //
-//  Created by 後藤 陸 on 2017/10/21.
+//  Created by Goto on 2017/10/21.
 //  Copyright © 2017年 Goto. All rights reserved.
 //
 
